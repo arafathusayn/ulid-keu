@@ -45,7 +45,7 @@ export class UlidMonotonic extends Ulid {
     _previous_id = this.MIN();
   }
 
-  static generate({ time }: UlidGenerateOptions = {}): UlidMonotonic {
+  static override generate({ time }: UlidGenerateOptions = {}): UlidMonotonic {
     const epoch = EpochConverter.toEpoch(EPOCH_ORIGIN_MS, time);
     const bytes = ByteArray.generateRandomFilled();
 
@@ -61,11 +61,11 @@ export class UlidMonotonic extends Ulid {
     return (_previous_id = new this(bytes));
   }
 
-  static MIN(): UlidMonotonic {
+  static override MIN(): UlidMonotonic {
     return new this(ByteArray.generateZeroFilled());
   }
 
-  static MAX(): UlidMonotonic {
+  static override MAX(): UlidMonotonic {
     return new this(ByteArray.generateOneFilled());
   }
 }

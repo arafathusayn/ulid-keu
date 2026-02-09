@@ -24,7 +24,7 @@ class HexCoder extends BaseCoder {
     });
   }
 
-  decodeTrusted(encoding: string): Uint8Array {
+  override decodeTrusted(encoding: string): Uint8Array {
     const bytes = new Uint8Array(16);
 
     for (
@@ -46,7 +46,7 @@ class HexCoder extends BaseCoder {
     return bytes;
   }
 
-  encodeTrusted(bytes: Uint8Array): string {
+  override encodeTrusted(bytes: Uint8Array): string {
     let encoding = "";
     for (let idx = 0, end = bytes.length; idx < end; ++idx) {
       encoding += BYTE_TO_HEX[bytes[idx] ?? 0] ?? "00";

@@ -1,5 +1,5 @@
 export class Id128Error extends Error {
-  get name(): string {
+  override get name(): string {
     return this.constructor.name;
   }
 }

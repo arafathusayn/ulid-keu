@@ -47,7 +47,7 @@ class Crockford32Coder extends BaseCoder {
     });
   }
 
-  decodeTrusted(encoding: string): Uint8Array {
+  override decodeTrusted(encoding: string): Uint8Array {
     const bytes = new Uint8Array(16);
     const quintets: number[] = [];
 
@@ -93,7 +93,7 @@ class Crockford32Coder extends BaseCoder {
     return bytes;
   }
 
-  encodeTrusted(bytes: Uint8Array): string {
+  override encodeTrusted(bytes: Uint8Array): string {
     // Note: unrolled for performance
     const quintets = [
       b(bytes, 0) >> 5,

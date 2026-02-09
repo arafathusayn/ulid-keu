@@ -19,3 +19,4 @@
 - 1.6.5 : Removed erroneous packaged files
 - 1.6.6 : Fix CHANGES and add credit for worker support
 - 2.0.0 : BREAKING — Renamed package to keu. Removed all UUID types (Uuid, Uuid1, Uuid4, Uuid6, UuidNil), VersionedIdFactory, UuidCoder, and machine/fake-machine modules. Removed deprecated compare/equal from IdFactory. Converted entire codebase from JavaScript to TypeScript. Single entry point via src/index.ts. Tests use bun:test.
+- 2.0.1 : Update repository URL to ulid-keu.

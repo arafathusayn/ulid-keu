@@ -1,0 +1,12 @@
+src/
+test/
+benchmark/
+.node-version
+.prettierrc
+.gitignore
+.eslintrc*
+tsconfig*.json
+bun.lock
+CLAUDE.md
+*.swp
+node_modules/

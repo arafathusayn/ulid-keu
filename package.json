@@ -1,32 +1,44 @@
 {
   "name": "keu",
   "description": "128-bit ULID Monotonic ID Generator",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Arafat Hossain Chowdhury <hello@arafat.dev>",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
-    "dist/"
+    "dist/",
+    "LICENSE",
+    "README.md",
+    "CHANGES"
   ],
-  "homepage": "https://github.com/arafathusayn/id128#id128",
+  "sideEffects": false,
+  "homepage": "https://github.com/arafathusayn/ulid-keu#keu",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arafathusayn/id128.git"
+    "url": "git+https://github.com/arafathusayn/ulid-keu.git"
   },
   "bugs": {
-    "url": "https://github.com/arafathusayn/id128/issues"
+    "url": "https://github.com/arafathusayn/ulid-keu/issues"
   },
   "browser": {
     "./dist/common/random-bytes.js": "./dist/common/random-bytes-browser.js"
   },
   "scripts": {
-    "build": "tsc",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
     "test": "bun test",
-    "prepublishOnly": "npm run build"
+    "prepack": "npm run build",
+    "prepublishOnly": "npm test && npm run build"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -40,7 +52,7 @@
     "monotonic",
     "uid",
     "ulid",
-    "unique"
-  ],
-  "private": true
+    "unique",
+    "typescript"
+  ]
 }
