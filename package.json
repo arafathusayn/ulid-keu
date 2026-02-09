@@ -1,68 +1,46 @@
 {
-	"name": "id128",
-	"description": "Collection of 128-bit Id generators",
-	"version": "1.6.6",
-	"author": "Aaron Cohen <aarondcohen@gmail.com>",
-	"license": "MIT",
-	"main": "index.js",
-	"types": "index.d.ts",
-	"files": [
-		"index.d.ts",
-		"index.js",
-		"src/",
-		"utils.js"
-	],
-	"homepage": "https://github.com/aarondcohen/id128#id128",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/aarondcohen/id128.git"
-	},
-	"bugs": {
-		"url": "https://github.com/aarondcohen/id128/issues"
-	},
-	"browser": {
-		"./src/common/machine.js": "./src/common/fake-machine.js",
-		"./src/common/random-bytes.js": "./src/common/random-bytes-browser.js"
-	},
-	"scripts": {
-		"benchmark": "NODE_PATH='./src/' node benchmark/stats.js",
-		"call": "NODE_PATH='./src/' node",
-		"dtslint": "dtslint types",
-		"test": "NODE_PATH='./src/' mocha",
-		"test-all": "NODE_PATH='./src/' mocha test/*"
-	},
-	"engines": {
-		"node": ">=v6.9.0"
-	},
-	"devDependencies": {
-		"benchmarkify": "github:aarondcohen/benchmarkify",
-		"chai": "*",
-		"dtslint": "^3.4.1",
-		"mocha": "*",
-		"sinon": "*"
-	},
-	"keywords": [
-		"128-bit",
-		"crockford32",
-		"guid",
-		"id",
-		"monotonic",
-		"random",
-		"rfc-4122",
-		"rfc4122",
-		"uid",
-		"ulid",
-		"unique",
-		"universal",
-		"uuid",
-		"uuid-v1",
-		"uuid-v4",
-		"uuid-v6",
-		"uuid1",
-		"uuid4",
-		"uuid6",
-		"uuidv1",
-		"uuidv4",
-		"uuidv6"
-	]
+  "name": "keu",
+  "description": "128-bit ULID Monotonic ID Generator",
+  "version": "2.0.0",
+  "author": "Arafat Hossain Chowdhury <hello@arafat.dev>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "homepage": "https://github.com/arafathusayn/id128#id128",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arafathusayn/id128.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arafathusayn/id128/issues"
+  },
+  "browser": {
+    "./dist/common/random-bytes.js": "./dist/common/random-bytes-browser.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "bun test",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "*",
+    "typescript": "~5.9"
+  },
+  "keywords": [
+    "128-bit",
+    "crockford32",
+    "id",
+    "monotonic",
+    "uid",
+    "ulid",
+    "unique"
+  ],
+  "private": true
 }
